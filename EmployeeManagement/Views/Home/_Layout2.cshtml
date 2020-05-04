@@ -6,13 +6,9 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
+    <div>Layout2</div>
     <div>
         @RenderBody()
     </div>
-    @if (IsSectionDefined("Scripts"))
-    {
-        @RenderSection("Scripts", required: true)
-    }
-
 </body>
 </html>

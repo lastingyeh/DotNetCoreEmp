@@ -27,3 +27,6 @@ C:\LEARNING\C#\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\Emp
 C:\LEARNING\C#\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\EmployeeManagement.pdb
 C:\LEARNING\C#\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\EmployeeManagement.genruntimeconfig.cache
 C:\LEARNING\C#\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\EmployeeManagement.csproj.CopyComplete
+C:\LEARNING\C#\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\LEARNING\C#\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\Razor\Views\Home\_Layout2.cshtml.g.cs
+C:\LEARNING\C#\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.cshtml.g.cs
