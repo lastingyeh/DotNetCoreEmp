@@ -24,7 +24,7 @@ using EmployeeManagement.ViewModels;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e0d915afb53cacb4c950590aa84de6252d097388", @"/Views/Home/_Layout2.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b180dae3a3a1b8fcf1277d08539dfb8c019a0c8e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"14e8e9f2ff240b2425dd706fb36d46c0e67b9f30", @"/Views/_ViewImports.cshtml")]
     public class Views_Home__Layout2 : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #line hidden
