@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ookWCYgdXQM11ok037NMSzzCvsnIuA2lvmyp4qV9r02KlJ05JxsrEqEwcKu0qeuQT1VT+VQ3xyWhsyVPK5tlCg==",
+  "dgSpecHash": "RW4elnKmIfq59qJM32gfVngylfQ2igpVJ3kQfOULBRIM8pz2F8ZcFMyB9084hTWpGje28jkof9zDlA0SSBf5Vg==",
   "success": true,
   "projectFilePath": "D:\\Workspaces\\codes\\DotNetCoreEmp\\EmployeeManagement\\EmployeeManagement.csproj",
   "expectedPackageFiles": [
@@ -178,6 +178,7 @@
     "C:\\Users\\yuhung.yeh\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.templating\\2.1.10\\microsoft.visualstudio.web.codegeneration.templating.2.1.10.nupkg.sha512",
     "C:\\Users\\yuhung.yeh\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.utils\\2.1.10\\microsoft.visualstudio.web.codegeneration.utils.2.1.10.nupkg.sha512",
     "C:\\Users\\yuhung.yeh\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\2.1.10\\microsoft.visualstudio.web.codegenerators.mvc.2.1.10.nupkg.sha512",
+    "C:\\Users\\yuhung.yeh\\.nuget\\packages\\microsoft.web.librarymanager.build\\2.1.76\\microsoft.web.librarymanager.build.2.1.76.nupkg.sha512",
     "C:\\Users\\yuhung.yeh\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\yuhung.yeh\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\yuhung.yeh\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
@@ -264,6 +265,7 @@
     "C:\\Users\\yuhung.yeh\\.nuget\\packages\\system.runtime.handles\\4.3.0\\system.runtime.handles.4.3.0.nupkg.sha512",
     "C:\\Users\\yuhung.yeh\\.nuget\\packages\\system.runtime.interopservices\\4.3.0\\system.runtime.interopservices.4.3.0.nupkg.sha512",
     "C:\\Users\\yuhung.yeh\\.nuget\\packages\\system.runtime.interopservices.runtimeinformation\\4.3.0\\system.runtime.interopservices.runtimeinformation.4.3.0.nupkg.sha512",
+    "C:\\Users\\yuhung.yeh\\.nuget\\packages\\system.runtime.loader\\4.3.0\\system.runtime.loader.4.3.0.nupkg.sha512",
     "C:\\Users\\yuhung.yeh\\.nuget\\packages\\system.runtime.numerics\\4.3.0\\system.runtime.numerics.4.3.0.nupkg.sha512",
     "C:\\Users\\yuhung.yeh\\.nuget\\packages\\system.runtime.serialization.primitives\\4.3.0\\system.runtime.serialization.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\yuhung.yeh\\.nuget\\packages\\system.runtime.serialization.xml\\4.3.0\\system.runtime.serialization.xml.4.3.0.nupkg.sha512",
@@ -305,7 +307,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "在相依性條件約束之外偵測到套件版本: Microsoft.AspNetCore.App 2.1.1 需要 Microsoft.AspNetCore.Razor.Design (>= 2.1.1 && < 2.2.0)，但解析出版本 Microsoft.AspNetCore.Razor.Design 2.2.0。",
+      "message": "Detected package version outside of dependency constraint: Microsoft.AspNetCore.App 2.1.1 requires Microsoft.AspNetCore.Razor.Design (>= 2.1.1 && < 2.2.0) but version Microsoft.AspNetCore.Razor.Design 2.2.0 was resolved.",
       "libraryId": "Microsoft.AspNetCore.Razor.Design",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.1"
