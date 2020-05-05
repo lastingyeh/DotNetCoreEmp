@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\LEARNING\\C#\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj": {}
+    "D:\\Workspaces\\codes\\DotNetCoreEmp\\EmployeeManagement\\EmployeeManagement.csproj": {}
   },
   "projects": {
-    "C:\\LEARNING\\C#\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj": {
+    "D:\\Workspaces\\codes\\DotNetCoreEmp\\EmployeeManagement\\EmployeeManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\LEARNING\\C#\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj",
+        "projectUniqueName": "D:\\Workspaces\\codes\\DotNetCoreEmp\\EmployeeManagement\\EmployeeManagement.csproj",
         "projectName": "EmployeeManagement",
-        "projectPath": "C:\\LEARNING\\C#\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj",
-        "packagesPath": "C:\\Users\\Chris\\.nuget\\packages\\",
-        "outputPath": "C:\\LEARNING\\C#\\EmployeeManagement\\EmployeeManagement\\obj\\",
+        "projectPath": "D:\\Workspaces\\codes\\DotNetCoreEmp\\EmployeeManagement\\EmployeeManagement.csproj",
+        "packagesPath": "C:\\Users\\yuhung.yeh\\.nuget\\packages\\",
+        "outputPath": "D:\\Workspaces\\codes\\DotNetCoreEmp\\EmployeeManagement\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\yuhung.yeh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,6 +54,10 @@
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.1.10, )"
             }
           },
           "imports": [
