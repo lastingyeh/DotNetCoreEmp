@@ -18,6 +18,10 @@ namespace EmployeeManagement
         {
             services.AddMvc().AddXmlDataContractSerializerFormatters();
             services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>();
+            // new instance each request
+            // services.AddScoped<IEmployeeRepository, MockEmployeeRepository>();
+            // new instance each render view
+            // services.AddTransient<IEmployeeRepository, MockEmployeeRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

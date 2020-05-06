@@ -63,3 +63,4 @@ D:\Workspaces\codes\DotNetCoreEmp\EmployeeManagement\obj\Debug\netcoreapp2.1\Emp
 D:\Workspaces\codes\DotNetCoreEmp\EmployeeManagement\obj\Debug\netcoreapp2.1\EmployeeManagement.csprojAssemblyReference.cache
 D:\Workspaces\codes\DotNetCoreEmp\EmployeeManagement\bin\Debug\netcoreapp2.1\libman.json
 D:\Workspaces\codes\DotNetCoreEmp\EmployeeManagement\obj\Debug\netcoreapp2.1\EmployeeManagement.csproj.CoreCompileInputs.cache
+D:\Workspaces\codes\DotNetCoreEmp\EmployeeManagement\obj\Debug\netcoreapp2.1\Razor\Views\Home\Create.cshtml.g.cs
