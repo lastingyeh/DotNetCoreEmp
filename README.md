@@ -2,6 +2,21 @@
 
 * [Section 51](https://www.youtube.com/watch?v=qDUS8ocavBU)
 
+### Database for Docker setup
+
+- Pull && run Mssql image
+
+      $ docker run -e ACCEPT_EULA=Y -e MSSQL_SA_PASSWORD=Strong@@PWD -p 1401:1433 --name mssql -d mcr.microsoft.com/mssql/server:2017-latest
+
+- Check Mssql running status
+
+      $ docker ps
+
+- Set Connectionstrings
+
+      server=127.0.0.1,1401;database=EmployeeDB;user id=sa;password=Strong@@PWD
+
+
 ### Database migration
 
 - Migration requirements
