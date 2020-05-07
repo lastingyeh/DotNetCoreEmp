@@ -1,4 +1,6 @@
-[Current process](https://www.youtube.com/watch?v=8aHzSx-inDE)
+### Current learning path
+
+* [Section 51](https://www.youtube.com/watch?v=qDUS8ocavBU)
 
 ### Database migration
 
