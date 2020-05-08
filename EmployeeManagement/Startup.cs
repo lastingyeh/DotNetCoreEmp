@@ -49,6 +49,20 @@ namespace EmployeeManagement
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                //set Properties/launchSettings.json non 'Development'
+
+                //default status code page
+                //app.UseStatusCodePages();
+                // StatusCode (302) redirect to Error/400 (200)
+                // app.UseStatusCodePagesWithRedirects("/Error/{0}");
+                // StatusCode 404
+                app.UseStatusCodePagesWithReExecute("/Error/{0}");
+
+                // Handle server exception
+                app.UseExceptionHandler("/Error");
+            }
 
             app.UseStaticFiles();
 
