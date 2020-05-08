@@ -6,7 +6,7 @@
 
 - Pull && run Mssql image
 
-      $ docker run -e ACCEPT_EULA=Y -e MSSQL_SA_PASSWORD=Strong@@PWD -p 1401:1433 --name mssql -d mcr.microsoft.com/mssql/server:2017-latest
+      $  docker run -e ACCEPT_EULA=Y -e MSSQL_SA_PASSWORD=Admin@@1234 -p 1401:1433 --name mssql -v "d:/workspaces/database/data":/var/opt/mssql/data -d mcr.microsoft.com/mssql/server:2017-latest
 
 - Check Mssql running status
 
@@ -42,3 +42,34 @@
         > Updates the database to a specified migration
 
           $ Update-Database
+
+### Database Add seed
+
+      > View > Other Windows > Package Manager Console
+
+- Add Seed Data
+ 
+      $ Add-Migration SeedEmployeesTable
+
+      $ Update-Database
+
+- Alter Seed Data
+
+      $ Add-Migration AlterEmployeesSeedData
+
+      $ Update-Database
+
+- Add-Migration | Remove-Migration
+
+  1. before Update-Database
+
+      $ Remove-Migration
+
+  2. After Update-Database
+
+      $ Update-Database [__EFMigrationsHistory_[targetValue]]
+
+      $ Remove-Migration
+
+  3. see: https://www.youtube.com/watch?v=MhvOKHUWgiY
+
