@@ -73,3 +73,18 @@
 
   3. see: https://www.youtube.com/watch?v=MhvOKHUWgiY
 
+  ### Packages
+
+  1. NLog.Web.AspNetCore 4.8.2
+
+  2. Microsoft.EntityFrameworkCore.Tools 2.2.0
+
+  3. 
+
+  ### Refs
+
+  1. [Logging for CreateDefaultBuilder #Line156](https://github.com/dotnet/aspnetcore/blob/master/src/DefaultBuilder/src/WebHost.cs)
+
+  2. [ASP.NET core tutorial for beginners](https://www.youtube.com/playlist?list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU)
+
+  3. [AspNetCore Github SourceCode](https://github.com/dotnet/aspnetcore)
