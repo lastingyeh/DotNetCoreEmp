@@ -6,7 +6,7 @@
 
 - Pull && run Mssql image
 
-      $  docker run -e ACCEPT_EULA=Y -e MSSQL_SA_PASSWORD=Admin@@1234 -p 1401:1433 --name mssql -v "d:/workspaces/database/data":/var/opt/mssql/data -d mcr.microsoft.com/mssql/server:2017-latest
+      $ docker run -e ACCEPT_EULA=Y -e MSSQL_SA_PASSWORD=Admin@@1234 -p 1401:1433 --name mssql -v "d:/workspaces/database/data":/var/opt/mssql/data -d mcr.microsoft.com/mssql/server:2017-latest
 
 - Check Mssql running status
 

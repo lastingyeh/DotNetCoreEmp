@@ -6,6 +6,7 @@ using EmployeeManagement.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,6 +29,14 @@ namespace EmployeeManagement
             // DB set
             services.AddDbContextPool<AppDbContext>(options =>
                 options.UseSqlServer(_config.GetConnectionString("EmployeeDBConnection")));
+
+            //Identity Set #2
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+            {
+                options.Password.RequiredLength = 10;
+                options.Password.RequiredUniqueChars = 3;
+
+            }).AddEntityFrameworkStores<AppDbContext>();
 
             services.AddMvc().AddXmlDataContractSerializerFormatters();
 
@@ -64,7 +73,15 @@ namespace EmployeeManagement
                 app.UseExceptionHandler("/Error");
             }
 
+            // StatusCode 404
+            app.UseStatusCodePagesWithReExecute("/Error/{0}");
+
+            // Handle server exception
+            app.UseExceptionHandler("/Error");
+
             app.UseStaticFiles();
+            //Identity Set #3
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
