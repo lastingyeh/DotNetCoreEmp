@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EmployeeManagement.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,7 +23,22 @@ namespace EmployeeManagement.Controllers
             this.signInManager = signInManager;
         }
 
+        [AcceptVerbs("Get", "Post")]
+        [AllowAnonymous]
+        public async Task<IActionResult> IsEmailInUse(string email)
+        {
+            var user = await userManager.FindByEmailAsync(email);
+
+            if (user == null)
+            {
+                return Json(true);
+            }
+
+            return Json($"email {email} is already in use.");
+        }
+
         [HttpGet]
+        [AllowAnonymous]
         // GET: /<controller>/
         public IActionResult Register()
         {
@@ -30,6 +46,7 @@ namespace EmployeeManagement.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
@@ -60,13 +77,15 @@ namespace EmployeeManagement.Controllers
 
 
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginViewModel model)
+        [AllowAnonymous]
+        public async Task<IActionResult> Login(LoginViewModel model, string returnUrl)
         {
             if (ModelState.IsValid)
             {
@@ -75,6 +94,12 @@ namespace EmployeeManagement.Controllers
 
                 if (result.Succeeded)
                 {
+                    //prevent open-redirect attacks 'check isLocalUrl'
+                    if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                    {
+                        return Redirect(returnUrl);
+                        //return LocalRedirect(returnUrl);
+                    }
                     return RedirectToAction("index", "home");
                 }
 
