@@ -8,6 +8,12 @@
   <ItemGroup>
     <Compile Remove="Migrations\20200507085859_InitialMigration.cs" />
     <Compile Remove="Migrations\20200507085859_InitialMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200511014817_Extend_IdentityUser.cs" />
+    <Compile Remove="Migrations\20200511014817_Extend_IdentityUser.Designer.cs" />
+    <Compile Remove="Migrations\20200512072802_initialDatabase.cs" />
+    <Compile Remove="Migrations\20200512072802_initialDatabase.Designer.cs" />
+    <Compile Remove="Migrations\20200512073258_Initia Databae.cs" />
+    <Compile Remove="Migrations\20200512073258_Initia Databae.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

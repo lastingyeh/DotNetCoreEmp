@@ -73,6 +73,12 @@
 
   3. see: https://www.youtube.com/watch?v=MhvOKHUWgiY
 
+  ### Database IdentityUser extension (20200511 migration used)
+
+  1. Add-Migration extend_IdentityUser
+
+  2. Update-Database
+
   ### Packages
 
   1. NLog.Web.AspNetCore 4.8.2

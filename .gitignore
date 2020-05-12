@@ -3,3 +3,5 @@ EmployeeManagement/Migrations
 EmployeeManagement/bin
 EmployeeManagement/obj
 EmployeeManagement/wwwroot/images/*
+Server/bin
+Server/obj
