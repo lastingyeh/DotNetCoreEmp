@@ -79,6 +79,22 @@
 
   2. Update-Database
 
+
+  ### Role Authorization
+
+  1. Single Role
+
+      [Authorize(Roles = "Admin")]
+
+  2. Multiple Roles
+
+      [Authorize(Roles = "Admin,User")]
+  
+  3. All Match Roles
+
+      [Authorize(Roles = "Admin")]
+      [Authorize(Roles = "User")]
+
   ### Packages
 
   1. NLog.Web.AspNetCore 4.8.2

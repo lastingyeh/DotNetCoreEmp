@@ -7,6 +7,7 @@ using EmployeeManagement.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -16,12 +17,14 @@ namespace EmployeeManagement.Controllers
     {
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
+        private readonly ILogger<AccountController> logger;
 
         public AccountController(UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager)
+            SignInManager<ApplicationUser> signInManager, ILogger<AccountController> logger)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
+            this.logger = logger;
         }
 
         [AcceptVerbs("Get", "Post")]
@@ -63,6 +66,12 @@ namespace EmployeeManagement.Controllers
 
                 if (result.Succeeded)
                 {
+                    //As Role Admin, it no resignIn to new user
+                    if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                    {
+                        return RedirectToAction("ListUsers", "Administration");
+                    }
+
                     await signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("index", "home");
                 }
@@ -94,8 +103,11 @@ namespace EmployeeManagement.Controllers
                 var result = await signInManager.PasswordSignInAsync(model.Email,
                     model.Password, model.RememberMe, false);
 
+                //logger.LogDebug(result.Succeeded.ToString());
+
                 if (result.Succeeded)
                 {
+                    //logger.LogDebug(returnUrl);
                     //prevent open-redirect attacks 'check isLocalUrl'
                     if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
                     {
@@ -117,5 +129,7 @@ namespace EmployeeManagement.Controllers
             await signInManager.SignOutAsync();
             return RedirectToAction("index", "home");
         }
+
+      
     }
 }

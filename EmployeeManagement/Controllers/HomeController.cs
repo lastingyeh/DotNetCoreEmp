@@ -37,12 +37,12 @@ namespace EmployeeManagement.Controllers
         public ViewResult Details(int? id)
         {
             //throw new Exception("Test exception");
-            _logger.LogTrace("Log Trace");
-            _logger.LogDebug("Log Debug");
-            _logger.LogInformation("Log Information");
-            _logger.LogWarning("Log Warning");
-            _logger.LogError("Log Error");
-            _logger.LogCritical("Log Critical");
+            //_logger.LogTrace("Log Trace");
+            //_logger.LogDebug("Log Debug");
+            //_logger.LogInformation("Log Information");
+            //_logger.LogWarning("Log Warning");
+            //_logger.LogError("Log Error");
+            //_logger.LogCritical("Log Critical");
 
             Employee employee = _employeeRepository.GetEmployee(id.Value);
 

@@ -2,8 +2,10 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.CodeAnalysis.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -43,6 +45,39 @@ namespace EmployeeManagement
                     config.Filters.Add(new AuthorizeFilter(policy));
 
                 }).AddXmlDataContractSerializerFormatters();
+
+            //Change AccessDeniedPath from Account/AccessDenied to Administration/AccessDenied
+            services.ConfigureApplicationCookie(options =>
+            {
+
+                options.AccessDeniedPath = new PathString("/Administration/AccessDenied");
+            });
+
+            // Claims Policy authorization
+            services.AddAuthorization(options =>
+            {
+                //As applied 'DeleteRolePolicy' => require two Claims ['Delete Role', 'Create Role']
+                //options.AddPolicy("DeleteRolePolicy",
+                //    policy => policy.RequireClaim("Delete Role").RequireClaim("Create Role"));
+
+                options.AddPolicy("DeleteRolePolicy",
+                   policy => policy.RequireAssertion(context => AuthorizeAccess(context, "Delete Role")));
+
+            });
+
+            // Roles Policy
+            services.AddAuthorization(options =>
+            {
+                //options.AddPolicy("EditRolePolicy", policy => policy.RequireClaim("Edit Role", "true"));
+                // Policy match rules ["Admin" & "Edit Role", "Super Admin"]
+                options.AddPolicy("EditRolePolicy", policy => policy.RequireAssertion(context => AuthorizeAccess(context, "Edit Role")));
+            });
+
+            // Roles Policy
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminRolePolicy", policy => policy.RequireRole("Admin"));
+            });
 
             // services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>();
 
@@ -92,5 +127,11 @@ namespace EmployeeManagement
                 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
         }
+
+        // AuthorizeAccess
+        private bool AuthorizeAccess(AuthorizationHandlerContext context, string policy) =>
+            context.User.IsInRole("Admin") && context.User.HasClaim(claim => claim.Type == policy && claim.Value == "true")
+            || context.User.IsInRole("Super Admin");
+
     }
 }

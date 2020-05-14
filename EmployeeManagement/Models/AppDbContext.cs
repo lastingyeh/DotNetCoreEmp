@@ -26,6 +26,11 @@ namespace EmployeeManagement.Models
             //Goto Package management console > Add-Migration AddingIdentity > Update-Database
 
             modelBuilder.Seed();
+
+            foreach (var fk in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
+            {
+                fk.DeleteBehavior = DeleteBehavior.Restrict;
+            }
         }
     }
 }
