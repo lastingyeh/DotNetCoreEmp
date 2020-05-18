@@ -12,6 +12,7 @@ using Microsoft.CodeAnalysis.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Security.Claims;
 
 namespace EmployeeManagement
@@ -42,7 +43,20 @@ namespace EmployeeManagement
                 options.Password.RequiredLength = 10;
                 options.Password.RequiredUniqueChars = 3;
 
-            }).AddEntityFrameworkStores<AppDbContext>();
+                //Add email confirm
+                options.SignIn.RequireConfirmedEmail = true;
+
+                //Add custom token provider options
+                options.Tokens.EmailConfirmationTokenProvider = "CustomEmailConfirmation";
+
+            })
+                .AddEntityFrameworkStores<AppDbContext>()
+                .AddDefaultTokenProviders()
+                .AddTokenProvider<CustomEmailConfirmationTokenProvider<ApplicationUser>>("CustomEmailConfirmation");
+
+            services.Configure<DataProtectionTokenProviderOptions>(options => options.TokenLifespan = TimeSpan.FromHours(5));
+
+            services.Configure<CustomEmailConfirmationTokenProviderOptions>(options => options.TokenLifespan = TimeSpan.FromDays(3));
 
             services.AddMvc(
                 config =>
@@ -121,6 +135,7 @@ namespace EmployeeManagement
             // Custom AuthorizationHandler
             services.AddSingleton<IAuthorizationHandler, CanEditOnlyOtherAdminRoleAndClaimHandler>();
             services.AddSingleton<IAuthorizationHandler, SuperAdminHandler>();
+            services.AddSingleton<DataProtectionPurposeStrings>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
