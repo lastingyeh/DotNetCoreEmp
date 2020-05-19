@@ -110,3 +110,8 @@
   2. [ASP.NET core tutorial for beginners](https://www.youtube.com/playlist?list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU)
 
   3. [AspNetCore Github SourceCode](https://github.com/dotnet/aspnetcore)
+
+  4. [Source Code](https://drive.google.com/drive/folders/1z49q-8xkKu8N8VjdemYKTs_4IbzBeLWM)
+
+  5. [Slides](https://csharp-video-tutorials.blogspot.com/2019/01/aspnet-core-tutorial-for-beginners.html)
+
